@@ -48,30 +48,6 @@ Language models process textual context and generate natural language outputs. I
 | **Use Case** | Single text completions | Multi-turn conversational chatbots & Agent workflows |
 | **LangChain Interface** | `GoogleGenerativeAI`, `HuggingFaceEndpoint` | `ChatGoogleGenerativeAI`, `ChatHuggingFace` |
 
-### 📊 Architecture & Data Flow Comparison Diagram
-
-```mermaid
-sequenceDiagram
-    autonumber
-    box LightYellow LLM Flow (Raw String Interface)
-    actor User1 as User
-    participant LLM as Legacy LLM (GoogleGenerativeAI)
-    end
-    
-    User1->>LLM: "Explain linear regression in 2 sentences" (String)
-    LLM-->>User1: "Linear regression finds the best-fit straight line..." (String Output)
-    
-    box LightBlue Chat Model Flow (Structured Message Interface)
-    actor User2 as User
-    participant Chat as Chat Model (ChatGoogleGenerativeAI)
-    end
-    
-    User2->>Chat: [SystemMessage("You are a doctor"), HumanMessage("Tell me about allergies")]
-    Chat-->>User2: AIMessage(content="Allergies occur when your immune system reacts...")
-```
-
----
-
 ## 📁 Project Structure
 
 ```
