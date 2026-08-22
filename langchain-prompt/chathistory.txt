@@ -1,0 +1,4 @@
+HumanMessage(content="I want to request a refund for my order #12345.")
+AIMessage(content="I'd be happy to help with that. Could you please confirm your email address associated with the order?")
+HumanMessage(content="My email is user@example.com.")
+AIMessage(content="Thank you. I have located order #12345. Since it was delivered within the last 14 days, it is eligible for a full refund.")
