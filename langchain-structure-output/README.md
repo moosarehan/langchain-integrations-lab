@@ -95,13 +95,16 @@ json_schema = {
 
 **Use when:** you need **cross-language / cross-system compatibility**. JSON Schema isn't tied to Python — it's a language-agnostic, universally understood format. This matters when the schema needs to be shared with or consumed by non-Python systems (a JS frontend, a different backend service, an API contract, etc.).
 
-### Quick Comparison
+### When to Use What?
 
-| Schema Type | Validation | Type Hints | Best For |
-|---|---|---|---|
-| TypedDict | ❌ No | ✅ Yes | Fast prototyping when you trust the LLM |
-| Pydantic | ✅ Yes | ✅ Yes | Production use, data safety, strict correctness |
-| JSON Schema | ✅ Yes (via schema) | ❌ No (raw dict) | Cross-language systems, API contracts |
+| Feature | TypedDict | Pydantic | JSON Schema |
+|---|:---:|:---:|:---:|
+| Basic structure | ✅ | ✅ | ✅ |
+| Type enforcement | ✅ | ✅ | ✅ |
+| Data validation | ❌ | ✅ | ❌ |
+| Default values | ❌ | ✅ | ❌ |
+| Automatic conversion | ❌ | ✅ | ❌ |
+| Cross-language compatibility | ❌ | ❌ | ✅ |
 
 ---
 
