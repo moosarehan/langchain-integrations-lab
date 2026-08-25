@@ -205,7 +205,7 @@ chain = prompt | model | parser | to_upper
 
 ## What Is LCEL?
 
-**LCEL (LangChain Expression Language)** is the declarative syntax that lets you build these Runnable pipelines using the **pipe operator (`|`)**, instead of manually instantiating `RunnableSequence`, `RunnableParallel`, etc.
+**LCEL (LangChain Expression Language)** is the declarative syntax that lets you build these Runnable pipelines using the **pipe operator (`|`)**, instead of manually instantiating `RunnableSequence`, 
 
 ```python
 chain = prompt | model | parser
