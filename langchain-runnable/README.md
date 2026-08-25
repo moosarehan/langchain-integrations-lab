@@ -16,11 +16,11 @@ This common interface is called **`Runnable`**.
 
 ```mermaid
 flowchart LR
-    A[PromptTemplate] -->|Runnable| E[Runnable Interface]
-    B[ChatModel / LLM] -->|Runnable| E
-    C[OutputParser] -->|Runnable| E
-    D[Retriever] -->|Runnable| E
-    E --> F[".invoke() .batch() .stream() .ainvoke()"]
+    A["PromptTemplate"] -->|Runnable| E["Runnable Interface"]
+    B["ChatModel or LLM"] -->|Runnable| E
+    C["OutputParser"] -->|Runnable| E
+    D["Retriever"] -->|Runnable| E
+    E --> F["invoke, batch, stream, ainvoke"]
 ```
 
 ---
@@ -54,19 +54,19 @@ LangChain's Runnables fall into two broad categories:
 
 ```mermaid
 flowchart TD
-    R[Runnable] --> TS[Task-Specific Runnables]
-    R --> RP[Runnable Primitives]
+    R["Runnable"] --> TS["Task-Specific Runnables"]
+    R --> RP["Runnable Primitives"]
 
-    TS --> TS1[PromptTemplate]
-    TS --> TS2[ChatModel / LLM]
-    TS --> TS3[OutputParser]
-    TS --> TS4[Retriever]
+    TS --> TS1["PromptTemplate"]
+    TS --> TS2["ChatModel or LLM"]
+    TS --> TS3["OutputParser"]
+    TS --> TS4["Retriever"]
 
-    RP --> RP1[RunnableSequence]
-    RP --> RP2[RunnablePassthrough]
-    RP --> RP3[RunnableParallel]
-    RP --> RP4[RunnableBranch]
-    RP --> RP5[RunnableLambda]
+    RP --> RP1["RunnableSequence"]
+    RP --> RP2["RunnablePassthrough"]
+    RP --> RP3["RunnableParallel"]
+    RP --> RP4["RunnableBranch"]
+    RP --> RP5["RunnableLambda"]
 ```
 
 ### 1. Task-Specific Runnables
