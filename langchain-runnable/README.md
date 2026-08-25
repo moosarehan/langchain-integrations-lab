@@ -109,8 +109,7 @@ from langchain_core.runnables import RunnableSequence
 chain = RunnableSequence(prompt, model, parser)
 ```
 
-**Use when:** you need a straightforward, linear pipeline — step 1 → step 2 → step 3.  
-📁 *Demo:* [`runnable-sequence.py`](runnable-sequence.py)
+**Use when:** you need a straightforward, linear pipeline — step 1 → step 2 → step 3.
 
 ---
 
@@ -132,8 +131,7 @@ chain.invoke("hello")
 # {'original': 'hello', 'upper': 'HELLO'}
 ```
 
-**Use when:** you need to retain the raw/original input value further down the pipeline instead of losing it after a transformation.  
-📁 *Demo:* [`runnable-passthrough.py`](runnable-passthrough.py)
+**Use when:** you need to retain the raw/original input value further down the pipeline instead of losing it after a transformation.
 
 ---
 
@@ -155,8 +153,7 @@ result = chain.invoke({'topic': text})
 
 By default, every branch inside a `RunnableParallel` receives the **entire same input** — each branch's own prompt/logic simply pulls out whichever key(s) it needs.
 
-**Use when:** you want to generate multiple independent outputs from the same input at the same time (e.g., generating notes and a quiz from the same topic simultaneously), rather than running them one after another.  
-📁 *Demo:* [`runnable-parallel.py`](runnable-parallel.py)
+**Use when:** you want to generate multiple independent outputs from the same input at the same time (e.g., generating notes and a quiz from the same topic simultaneously), rather than running them one after another.
 
 ---
 
@@ -174,8 +171,7 @@ chain = RunnableBranch(
 )
 ```
 
-**Use when:** your pipeline needs to behave differently depending on the input — essentially the Runnable equivalent of an if/elif/else statement.  
-📁 *Demo:* [`runnable-branch.py`](runnable-branch.py)
+**Use when:** your pipeline needs to behave differently depending on the input — essentially the Runnable equivalent of an if/elif/else statement.
 
 ---
 
@@ -191,20 +187,19 @@ to_upper = RunnableLambda(lambda x: x.upper())
 chain = prompt | model | parser | to_upper
 ```
 
-**Use when:** you need custom transformation, preprocessing, or postprocessing logic that doesn't already exist as a built-in LangChain component — it's your escape hatch for arbitrary code inside a Runnable pipeline.  
-📁 *Demo:* [`runnable-lambda.py`](runnable-lambda.py)
+**Use when:** you need custom transformation, preprocessing, or postprocessing logic that doesn't already exist as a built-in LangChain component — it's your escape hatch for arbitrary code inside a Runnable pipeline.
 
 ---
 
 ## Quick Reference: Runnable Primitives
 
-| Primitive | Purpose | Analogy | Demo File |
-|---|---|---|---|
-| `RunnableSequence` | Run steps one after another | A pipeline / assembly line | [`runnable-sequence.py`](runnable-sequence.py) |
-| `RunnablePassthrough` | Pass input through unchanged | A pass-through wire | [`runnable-passthrough.py`](runnable-passthrough.py) |
-| `RunnableParallel` | Run multiple steps at the same time | Parallel workers | [`runnable-parallel.py`](runnable-parallel.py) |
-| `RunnableBranch` | Choose a path based on a condition | if / elif / else | [`runnable-branch.py`](runnable-branch.py) |
-| `RunnableLambda` | Run custom Python logic | A custom function plugged in | [`runnable-lambda.py`](runnable-lambda.py) |
+| Primitive | Purpose | Analogy |
+|---|---|---|
+| `RunnableSequence` | Run steps one after another | A pipeline / assembly line |
+| `RunnablePassthrough` | Pass input through unchanged | A pass-through wire |
+| `RunnableParallel` | Run multiple steps at the same time | Parallel workers |
+| `RunnableBranch` | Choose a path based on a condition | if / elif / else |
+| `RunnableLambda` | Run custom Python logic | A custom function plugged in |
 
 ---
 
