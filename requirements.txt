@@ -20,3 +20,9 @@ python-dotenv
 # Machine Learning & Data Utilities
 numpy
 scikit-learn
+
+
+requests
+beautifulsoup4
+langchain-community
+pypdf
