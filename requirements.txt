@@ -12,6 +12,7 @@ langchain-huggingface
 transformers
 huggingface-hub
 sentence-transformers
+langchain-experimental
 torch
 
 # Environment Variable Management
